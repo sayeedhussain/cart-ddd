@@ -26,7 +26,7 @@ public class Cart {
     }
 
     public void applyPromotion(Promotion promotion) {
-        this.promotionId = promotionId;
+        this.promotionId = promotion.id;
         this.amounts.discount = this.amounts.subtotal.multiply(promotion.discountPercentage.divide(BigDecimal.valueOf(100)));
         this.amounts.total = this.amounts.subtotal.subtract(this.amounts.discount);
     }
